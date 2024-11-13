@@ -1,7 +1,16 @@
 export default function Home() {
     return (
-        <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 text-primary gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-            <p>Hello world</p>
-        </div>
+        <section className='relative overflow-hidden transform-gpu'>
+            <div
+                id='grid'
+                className='flex flex-col pb-20 min-h-[90dvh] w-full'
+            />
+
+            <div className='absolute w-full z-[1] inset-0 top-4 flex justify-center'>
+                <h1 className='text-[64px] text-center font-bold mx-auto absolute mt-16'>
+                    Book. Play. Win.
+                </h1>
+            </div>
+        </section>
     );
 }

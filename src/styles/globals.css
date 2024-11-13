@@ -7,4 +7,48 @@
     --foreground: #171717;
     --primary: #ff204e;
     --secondary: #00f2ea;
+    --bg-color: #edfffe;
+    --grid-gap: 0px;
+    --grid-color: #81ffff;
+    --grid-strength: 1px;
+}
+
+#grid {
+    perspective: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+#grid::before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(
+            to bottom,
+            transparent var(--grid-gap),
+            var(--bg-color) var(--grid-gap)
+        ),
+        linear-gradient(
+            to right,
+            var(--grid-color) var(--grid-strength),
+            transparent var(--grid-strength)
+        ),
+        linear-gradient(
+            to right,
+            transparent var(--grid-gap),
+            var(--bg-color) var(--grid-gap)
+        ),
+        linear-gradient(
+            to bottom,
+            var(--grid-color) var(--grid-strength),
+            transparent var(--grid-strength)
+        );
+    background-size: 0px 0px, 18px 18px;
+    left: 0;
+    transform: rotateX(45deg) scaleY(0.5) scaleX(3) translateZ(0) skewX(0)
+        skewY(0);
+    z-index: 0;
 }
