@@ -7,10 +7,26 @@
     --foreground: #171717;
     --primary: #ff204e;
     --secondary: #00f2ea;
-    --bg-color: #edfffe;
+    --bg-color: #f3f7fb;
     --grid-gap: 0px;
-    --grid-color: #81ffff;
+    --grid-color: #edfffe;
     --grid-strength: 1px;
+    --sun-color: #f9eafd;
+    --sun-color-2: #f9eafd;
+}
+
+::selection {
+    color: #000000;
+    background: rgb(154, 247, 222);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 #grid {
@@ -51,4 +67,20 @@
     transform: rotateX(45deg) scaleY(0.5) scaleX(3) translateZ(0) skewX(0)
         skewY(0);
     z-index: 0;
+}
+
+#grid::after {
+    content: '';
+    height: 40%;
+    position: absolute;
+    top: 150;
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        var(--sun-color) 42.5%,
+        var(--sun-color-2) 45%,
+        transparent 100%
+    );
+    z-index: 100;
 }
