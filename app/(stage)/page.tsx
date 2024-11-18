@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const BallAnimation = dynamic(() => import('@/animations/ball'));
 
@@ -33,9 +34,11 @@ export default function Home() {
 
                     <div className='mt-7 flex items-center'>
                         <BallAnimation />
-                        <Button hover='shine' className='h-12 text-lg px-7'>
-                            Booking
-                        </Button>
+                        <Link href='/lookup' passHref>
+                            <Button hover='shine' className='h-12 text-lg px-7'>
+                                Booking
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
